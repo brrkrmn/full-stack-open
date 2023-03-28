@@ -1,11 +1,14 @@
 import React from 'react';
 import Person from '../Person/Person';
 
-function Persons({ persons }) {
+function Persons({ persons, handleDeletePerson }) {
   return (
-    persons.map((person, index) => {
+    persons.map((person) => {
       return(
-        <Person key={index} person={person} />
+        <div key={person.id}>
+          <Person person={person} />
+          <button onClick={() => handleDeletePerson(person.id)}>Delete</button>      
+        </div>
       )
     })
   )
