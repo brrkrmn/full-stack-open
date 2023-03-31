@@ -1,0 +1,15 @@
+body {
+  padding: 40px 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input {
+  height: 20px;
+}
