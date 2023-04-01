@@ -3,12 +3,6 @@ import Country from '../Country/Country';
 import CountryListItem from '../CountryListItem';
 
 function Results({ filteredCountries }) {
-  const handleShowCountry = (country) => {
-    return(
-      <Country country={country} />
-    )
-  }
-
   if (filteredCountries.length > 10) {
     return (
       <p>Too many matches, specify another filter.</p>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Weather from '../Weather/Weather';
 
 function Country({ country }) {
   const languages = Object.values(country.languages);
@@ -18,6 +19,8 @@ function Country({ country }) {
       </ul>
       
       <div>{country.flag}</div>
+
+      <Weather country={country} />
     </>
 
   )

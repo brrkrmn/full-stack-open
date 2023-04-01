@@ -7,6 +7,7 @@ function App() {
   const [countries, setCountries] = React.useState([]);
   const [filteredCountries, setFilteredCountries] = React.useState([])
   const [searchInput, setSearchInput] = React.useState('');
+  
   React.useEffect(() => {
     countryService.getAll().then(response => setCountries(response));
   }, [])
