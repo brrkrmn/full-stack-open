@@ -25,7 +25,7 @@ const App = () => {
     event.preventDefault();
     const name = persons.find((person) => person.name === newName);
     if (!name) {
-      const newPerson = { name: newName, phone: newPhone };
+      const newPerson = { name: newName, number: newPhone };
       personService.create(newPerson).then((returnedPerson) => {
         setPersons([...persons, returnedPerson]);
       });
@@ -44,7 +44,7 @@ const App = () => {
   const changeNumber = async () => {
     const person = persons.find(p => p.name === newName);
     if (person) {
-      const newPerson = {...person, phone: newPhone};
+      const newPerson = {...person, number: newPhone};
       await personService.update(newPerson.id, newPerson);
       const newPersons = await personService.getAll();
       setPersons(newPersons)
