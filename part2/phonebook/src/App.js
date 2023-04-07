@@ -26,9 +26,17 @@ const App = () => {
     const name = persons.find((person) => person.name === newName);
     if (!name) {
       const newPerson = { name: newName, number: newPhone };
-      personService.create(newPerson).then((returnedPerson) => {
-        setPersons([...persons, returnedPerson]);
-      });
+      personService
+        .create(newPerson)
+        .then((returnedPerson) => {
+          setPersons([...persons, returnedPerson]);
+        })
+        .catch(error => {
+          setNotificationType('error')
+          setMessage(error.response.data.error)
+          console.log(error.response.data.error)
+        })
+
       setNotificationType('success')
       setMessage(`${newName} is added.`)
     } else {
